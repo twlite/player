@@ -1,6 +1,10 @@
 const h1 = document.getElementById("aud");
-const audio = "./LastDance.mp3";
-const player = new Audio(audio);
+const audioList = ["./LastDance.mp3", "./jsb.mp3"];
+
+let num = prompt("Select a track:", "1");
+if (!num || !parseInt(num) || parseInt(num) < 1 || parseInt(num) > 2) num = 1;
+
+const player = new Audio(audioList[num - 1]);
 player.loop = true;
 
 let intv;
